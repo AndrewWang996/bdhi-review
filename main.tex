@@ -1,0 +1,70 @@
+
+% -*- Mode:TeX -*-
+
+\documentclass[twoside,12pt]{article}
+\usepackage{fancyhdr}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage[nottoc,notlot,notlof]{tocbibind}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{color}
+\usepackage[T1]{fontenc}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{breqn}
+\usepackage{titling}
+
+
+\author{Andy Wang}
+
+\title{Smooth Shape Interpolation with Multiple Keyframes \\
+	\large 6.UAR SuperUROP Proposal \\
+	Faculty Advisor: Justin Solomon}
+
+\numberwithin{equation}{section}
+
+\geometry{
+  headheight = 3ex,       % <-- and this
+	 headsep = 2ex,          % <-- and this
+}
+\pagestyle{fancy}
+
+\lstdefinestyle{fortranStyle}{
+	language=[90]Fortran,
+	keywordstyle=\color{red},
+	commentstyle=\color{green},
+	morecomment=[l]{!\ },
+	numbersep=10pt,
+	tabsize=4,
+	showspaces=false,
+	showstringspaces=false,
+	basicstyle=\ttfamily\small
+}
+
+\begin{document}
+\maketitle
+
+\input{TexSections/Abstract}
+
+\input{TexSections/Introduction}
+
+\input{TexSections/Previous-Work}
+
+\input{TexSections/Mathematical-Background}
+
+\input{TexSections/Interpolation-Problem}
+
+\input{TexSections/Parallel-Methods}
+
+\input{TexSections/Metric-Pullback}
+
+
+
+
+\end{document}
