@@ -1,1 +1,26 @@
 \section{Interpolation Problem}
+
+\subsection{Basic Approach}
+
+We would like to interpolate the Jacobian $J_f$ to preserve local geometric quantities. The process for this consists of interpolating $J_f$'s decomposition into similarity and anti-similarity parts: $f_z = \phi', f_{\overline{z}} = \psi'$. Then by integrating these values, we can sum to obtain an interpolation for $f$. 
+
+Since $f_z, f_{\overline{z}}$ are holomorphic and anti-holomorphic, they are integrable and result in, again, holomorphic and anti-holomorphic results $\phi, \psi$. Recall that $f = \phi + \overline{\psi}$, so that summing these values gives us $f$. 
+
+Now we can prove a couple lemmas:
+
+\begin{lemma}
+	If $f_z$ and $f_{\overline{z}}$ have Property 4 (smoothness), then $f$ will have Property 4 as well. 
+\end{lemma}
+
+\begin{lemma}
+	If $|f_z| > |f_{\overline{z}}| \geq 0 \forall(t,z) \in [0,1] \times \Omega$, $f$ will have Property 3 (local injectivity).
+\end{lemma}
+
+
+% As we are interested in preserving local geometric quantities, we will look to interpolate the Jacobian Jf and then to integrate it to obtain an interpolation. Furthermore, we would like the inter- polation to be harmonic. The decomposition given by Equation (1) suggests a general approach that will solve these problems si- multaneously. In particular, we can interpolate the similarity and anti-similarity parts of Jf separately by interpolating fz = Φ′ and fzˉ = Ψ′, holomorphically and anti-holomorphically respectively. As they are kept holomorphic and anti-holomorphic, they are in- tegrable, and result in holomorphic and anti-holomorphic parts Φ and Ψ. Summing these mappings to obtain the  nal interpolated mappings, we see that they will be harmonic and Property 2 will hold.
+% As might be noted, integration of Jf (or its parts) will result in integration constants that will need to be set. At t = 0 and t = 1, these integration constants will be chosen so that interpolation is achieved, satisfying Property 1, and for intermediate times, they will be chosen by linear interpolation. As a result:
+% Lemma 1. If fz and fzˉ have Property 4, f will have Property 4. Lastly, by discussions in Section 3.4, we have:
+% Lemma2. If|fz|>|fzˉ|≥0∀(t,z)∈[0,1]×Ω,fwillhave Property 3.
+
+
+

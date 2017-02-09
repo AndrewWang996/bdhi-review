@@ -1,1 +1,70 @@
 \section{Parallel Methods}
+
+In this section, we introduce two parallel methods for computing the interpolation. Both of them interpolate $f_z$ logarithmically. The only difference is the way that they compute $f_{\overline{z}}$. 
+
+When we interpolate $f_z$ logarithmically, this means that we interpolate $\arg f_z$ linearly. 
+
+\subsection{Logarithmic Interpolation of $f_z$}
+
+In order to interpolate $f_z$ logarithmically, we follow this formula where the input are $f_z^0, f_z^1$. It is expressed as:
+
+\begin{align*}
+f_z^t &= (f_z^0)^{1-t} (f_z^1)^t \\
+&= e^{(1-t) \log f_z^0 + t \log f_z^1} \\
+&= |f_z^0|^{1-t} |f_z^1|^{t} e^{i \left( (1-t) \arg(f_z^0) + t \arg(f_z^1) \right)}
+\end{align*}
+
+Note that in the second equation, we need to precisely define what our $\log$ function is. 
+
+
+
+\subsection{Bounding Conformal Distortion}
+% not super necessary?
+% basically just tries to mathematically prove some bounds
+% but we are mostly concerned with application
+
+The second complex dilation $\nu$ is defined as:
+
+\begin{equation}
+\nu = \frac{\overline{g_{\overline{z}}}}{g_z}
+\end{equation}
+
+where $g$ is a planar mapping. 
+
+
+This means that we can calculate $f_{\overline{z}}$ as 
+
+$$f_{\overline{z}} = \nu g_z$$
+
+Now if we linearly interpolate $\nu$ with respect to time, we obtain:
+
+$$\nu^t = (1-t) \nu^0 + t \nu^1$$
+$$f_{\overline{z}}^t = \overline{\nu^t f_z^t}$$
+
+Note that the derived formula for $f_{\overline{z}}^t$ is anti-holomorphic as expected.
+
+This is the first method, also known as the $\nu$ method.
+
+\subsection{Interpolating Stretch Direction}
+
+Short summary: We want to interpolate the stretch direction. This property is our 8th property and is not fulfilled by the $\nu$ method.
+
+\subsection{Introducing $\eta$}
+
+For this reason, we introduce the second method, called the $\eta$ method. For a planar mapping $g$, we define 
+
+$$ \eta = g_{\overline{z}} \overline{g_z} = \mu |g_z|^2 $$
+
+We linearly interpolate $\eta$ in order to obtain the equations:
+
+$$\eta^t = (1-t) \eta^0 + t \eta^1$$
+$$f_{\overline{z}}^t = \frac{\eta^t}{ \overline{f_z^t} }$$
+
+This method allows us to interpolate $f_{\overline{z}}^t$ with the 8th property. 
+
+
+
+
+\subsection{Scaling $\eta$}
+
+
