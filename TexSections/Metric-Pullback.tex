@@ -1,12 +1,49 @@
 \section{Metric Pullback}
 
+Another method of interpolating $f_z$ is considered here. In the previous section, we considered interpolating $f_z$ logarithmically. Now, we consider linearly interpolating the metric tensor of $f_z$. 
+
+This method seems to perform the best qualitatively out of the 3 variants presented.
 
 \subsection{The Metric Tensor and Linear Interpolation}
+
+Here, we define the metric tensor. If we consider a planar mapping $h: \Omega \rightarrow \mathbb{R}^2$, then we get that the metric tensor is the matrix expression / version of the pullback metric $h*g$. It is also written as:
+
+\begin{align*}
+M_h &= J_h^T J_h \\
+&= \begin{bmatrix}|h_z|^2 + |h_{\overline{z}}|^2 & 0 \\ 0 & |h_z|^2 + |h_{\overline{z}}|^2 \end{bmatrix} + 2 \begin{bmatrix}\Re(\eta) & \Im(\eta) \\ \Im(\eta) & -\Re(\eta) \end{bmatrix}
+\end{align*}
+% you should do this calculation by yourself later
+
+
+Notice that $M_h$ is symmetric and positive semi-definite.
+
+
+We may now write the isometric and conformal distortion measures for the purpose of demonstrating that they are bounded when we perform linear interpolation of the metric tensor.
+
+$$\sigma_a^2 = |h_z|^2 + |h_{\overline{z}}|^2 + 2 |\eta| = \mathcal{A} + |\eta|$$
+$$\sigma_b^2 = |h_z|^2 + |h_{\overline{z}}|^2 - 2 |\eta| = \mathcal{A} - |\eta|$$
+
+$$K^2 = \frac{\sigma_a}{\sigma_b} = \frac{\mathcal{A} + 2|\eta|}{\mathcal{A} - 2 |\eta|}$$
+
+While linearly interpolating the metric tensor according to $M_h^t = (1-t)M_h^0 + t M_h^1$, we get that due to uniqueness of the additive decomposition, that $\mathcal{A}$ and $|\eta|$ are linearly interpolated as well. % prove this
+
+This makes it clear that isometric distortion is linearly interpolated.
+
 
 
 \subsection{Interpolation on the Boundary}
 
+To quote the text, ``the blending of the metric tensor everywhere may not give us metrics that are realizable as the pullback metric for a planar mapping". 
+
+For that reason, we only interpolate the metric tensor on the boundary to determine $f_z$ on the boundary. Then we may solve a Dirichlet problem to determine a harmonic function $u: \Omega \rightarrow \mathbb{R}$ with value $\ln |f_z^t|$ in the interior. % how DO you solve a dirichlet problem?
+
+
 \subsection{Variant Validation}
 % not necessary, just more bound confirmation
 % when we are mostly concerned with application
+
+
+
+
+
 

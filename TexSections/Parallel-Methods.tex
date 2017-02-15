@@ -67,4 +67,22 @@ This method allows us to interpolate $f_{\overline{z}}^t$ with the 8th property.
 
 \subsection{Scaling $\eta$}
 
+The unscaled $\eta$ variant might not have the following properties:
+
+\begin{enumerate}
+	\item local injectivity
+	\item geometric distortion bounds % what does this mean?
+\end{enumerate}
+
+In this case, we may scale our linearly interpolated $\eta(t)$ according to the following formula:
+
+$$\widetilde{\eta}(t) = \rho(t) \eta(t)$$
+
+For a particular choice of $\rho(t)$, we can gain local injectivity as well as geometric distortion bounds. To give a little intuition, suppose our function $\rho(t)$ approaches $0$ for all $t$. Then $f_{\overline{z}}^t$ approaches $0$ as well, signifying that the mappings become more and more conformal, lowering conformal distortion bounds.
+
+One particular issue with globally scaling $\eta(t)$ by $\rho(t)$ is that there might be a ``qualitative non-locality," to quote the text. Essentially, the scaling needed in one portion might cause another portion to be scaled to near conformality even when not desired.
+
+
+
+
 
