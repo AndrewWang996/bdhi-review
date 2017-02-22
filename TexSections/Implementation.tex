@@ -22,7 +22,7 @@ When speaking about a mesh, we can decompose holomorphic functions into the sum 
 	\label{fig:Cauchy-Cage}
 \end{figure}
 
-In this way, any holomorphic function $\Phi(z)$ can be written as:
+In this way, any holomorphic function $\Phi(z)$ can be approximated by a linear combination of the finite set of Cauchy barycentric coordinates:
 
 $$\Phi(z) = \sum_{j=1}^n C_j(z) \phi_j$$
 
@@ -36,12 +36,37 @@ $\ldots$
 
 Then after minimizing the ARAP energy in a series of loops, we obtain functions $\Phi, \Psi$ which comprise our mapping $f$. Recall that these functions are written as:
 
-\begin{align*}
+\begin{align} \label{eq:Cauchy-Transform}
 \Phi(z) &= \sum_{j=1}^n C_j(z) \phi_j \\
 \Psi(z) &= \sum_{j=1}^n C_j(z) \psi_j
-\end{align*}
+\end{align}
 
 where we know the complex numbers $\{\phi_1, \phi_2, \ldots, \phi_n\}, \{\psi_1, \psi_2, \ldots, \psi_n\}$ as well as the closed form representation of TO BE CONTINUED.
+
+
+\subsection{Integration of $\Phi'$}
+
+In this section, we discuss how to recover $\Phi$ from $f_z = \Phi'$. The difficulty concerning this step arises when considering that the antiderivative of $f_z$, while holomorphic, does not necessarily belong to the subspace of holomorphic functions spanned by Equation \ref{eq:Cauchy-Transform}. 
+
+One such method due to \cite[Chen \& Weber 2015]{bdhm-2015} works by performing a least squares projection of the derivatives into the Cauchy coordinate space.
+
+However, a better approach that %supposedly
+produces better results with bounded geometric distortion uses spanning trees to perform an integration of $\Phi'$ to recover $\Phi$. The main idea lies in the rectangle rule:
+
+\begin{equation}
+\Phi^t(v_j) - \Phi^t(v_i) = \int_{v_i}^{v_j} f_z^t(z) dz \approx (v_j-v_i) \frac{f_z^t(v_j) + f_z^t(v_i)}{2}
+\end{equation}
+
+This lets us calculate the edge differences for all edges in parallel if desired, and then accumulate these values along all the edges of the spanning tree.
+
+
+Note that we also need one anchor point $\Phi(v_0)$. This point, chosen by the user on the original mesh, may be linearly interpolated according to the equation:
+
+$$\Phi^t(v_0) = (1-t) f^0(v_0) + t f^1(v_0)$$
+
+
+
+ 
 
 
  
